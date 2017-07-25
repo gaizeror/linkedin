@@ -6,7 +6,7 @@ var SystemService = (function () {
     SystemService.prototype.getSystems = function () {
         return [
             {
-                "Id": 205918428,
+                "Id": 1,
                 "Name": "Dev",
                 "Team": "DevTeam",
                 "Tech": ["MongoDB", "Angular"],
@@ -15,7 +15,7 @@ var SystemService = (function () {
                 "show": true
             },
             {
-                "Id": 205918428,
+                "Id": 2,
                 "Name": "Prod",
                 "Team": "ProdTeam",
                 "Tech": ["SQL", "Virtualization"],

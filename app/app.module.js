@@ -11,6 +11,7 @@ var platform_browser_1 = require("@angular/platform-browser");
 var http_1 = require("@angular/http");
 var router_1 = require("@angular/router");
 var forms_1 = require("@angular/forms");
+var systemfilter_pipe_1 = require("./systems/systemfilter.pipe");
 var app_component_1 = require("./app.component");
 var welcome_component_1 = require("./home/welcome.component");
 var developers_list_component_1 = require("./developers/developers-list.component");
@@ -34,7 +35,7 @@ AppModule = __decorate([
             ]),
             forms_1.FormsModule,
         ],
-        declarations: [app_component_1.AppComponent, developers_list_component_1.DevelopersListComponent, systems_component_1.SystemsComponent, welcome_component_1.WelcomeComponent],
+        declarations: [app_component_1.AppComponent, developers_list_component_1.DevelopersListComponent, systems_component_1.SystemsComponent, welcome_component_1.WelcomeComponent, systemfilter_pipe_1.SystemFilter],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);

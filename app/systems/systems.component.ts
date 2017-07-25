@@ -11,9 +11,12 @@ export class SystemsComponent {
     public systems: ISystem[];
     filteredSystems: ISystem[];
     tmpfilteredSystems: ISystem[];
+
+    listFilter: string = '';
+
+   // filterargs = { Name: this.listFilter};
     
 
-    listFilter: string = ' ';
 
 
     constructor (systemServics: SystemService){

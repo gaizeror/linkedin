@@ -4,6 +4,8 @@ import { HttpModule } from '@angular/http'
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
+import { SystemFilter } from './systems/systemfilter.pipe'
+
 
 import { AppComponent }  from './app.component';
 import { WelcomeComponent } from './home/welcome.component';
@@ -22,9 +24,9 @@ import {SystemsComponent} from './systems/systems.component';
       {path: '**', redirectTo: 'home', pathMatch: 'full'}
     ]),
     FormsModule,
-    
+
   ],
-  declarations: [ AppComponent, DevelopersListComponent, SystemsComponent, WelcomeComponent ],
+  declarations: [ AppComponent, DevelopersListComponent, SystemsComponent, WelcomeComponent,SystemFilter ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

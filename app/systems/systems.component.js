@@ -12,9 +12,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var systems_service_1 = require("./systems.service");
 var SystemsComponent = (function () {
+    // filterargs = { Name: this.listFilter};
     function SystemsComponent(systemServics) {
         this.title = 'Systems';
-        this.listFilter = ' ';
+        this.listFilter = '';
         //     this.getFilteredSystems();
         this.systems = systemServics.getSystems();
         // this.filteredSystems = this.getFilteredSystems();
