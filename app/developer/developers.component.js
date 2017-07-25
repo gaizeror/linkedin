@@ -7,20 +7,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var platform_browser_1 = require("@angular/platform-browser");
-var app_component_1 = require("./app.component");
-var developers_component_1 = require("./app/developer/developers.component");
-var AppModule = (function () {
-    function AppModule() {
+var DevelopersComponent = (function () {
+    function DevelopersComponent() {
+        this.pageTitle = 'Developers';
     }
-    return AppModule;
+    return DevelopersComponent;
 }());
-AppModule = __decorate([
-    core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule],
-        declarations: [app_component_1.AppComponent, developers_component_1.DevelopersComponent],
-        bootstrap: [app_component_1.AppComponent]
+DevelopersComponent = __decorate([
+    core_1.Component({
+        selector: 'li-dev',
+        templateUrl: 'app/developer/developers.component.html'
     })
-], AppModule);
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+], DevelopersComponent);
+exports.DevelopersComponent = DevelopersComponent;
+//# sourceMappingURL=developers.component.js.map
