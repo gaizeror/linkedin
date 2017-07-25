@@ -23,11 +23,7 @@ import {SystemsComponent} from './systems/systems.component';
       {path: '', redirectTo: 'home', pathMatch: 'full'},
       {path: '**', redirectTo: 'home', pathMatch: 'full'}
     ]),
-<<<<<<< HEAD
-    Ng2TableModule
-=======
     FormsModule,
->>>>>>> 7c7eabbd4245e7248e90eeb402ad67c28591bc7a
 
   ],
   declarations: [ AppComponent, DevelopersListComponent, SystemsComponent, WelcomeComponent,SystemFilter ],

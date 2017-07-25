@@ -16,7 +16,6 @@ var app_component_1 = require("./app.component");
 var welcome_component_1 = require("./home/welcome.component");
 var developers_list_component_1 = require("./developers/developers-list.component");
 var systems_component_1 = require("./systems/systems.component");
-var table_component_1 = require("./table/table.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -31,7 +30,6 @@ AppModule = __decorate([
                 { path: 'home', component: welcome_component_1.WelcomeComponent },
                 { path: 'developers', component: developers_list_component_1.DevelopersListComponent },
                 { path: 'systems', component: systems_component_1.SystemsComponent },
-                { path: 'table', component: table_component_1.TableDemoComponent },
                 { path: '', redirectTo: 'home', pathMatch: 'full' },
                 { path: '**', redirectTo: 'home', pathMatch: 'full' }
             ]),
