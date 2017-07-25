@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
     templateUrl: 'app/systems/systems.component.html'
 })
 export class SystemsComponent {
-    public title : string  = 'hello moish';
+    public title : string  = 'Systems';
     systems : any [] = [
         {
         "Id": 205918428,

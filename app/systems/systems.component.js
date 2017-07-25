@@ -9,7 +9,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var SystemsComponent = (function () {
     function SystemsComponent() {
-        this.title = 'hello moish';
+        this.title = 'Systems';
         this.systems = [
             {
                 "Id": 205918428,
