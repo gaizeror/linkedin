@@ -1,0 +1,21 @@
+
+<h1> {{ title }} </h1>
+<table class="table">
+    <thead>
+        <th>ID</th>
+        <th>system Name</th>
+        <th>Owner Team</th>
+        <th>Used Teches</th>
+        <th>System's Plan</th>
+        <th>Description</th>
+    </thead>
+    <tbody>
+        <tr *ngFor='let system of systems'>
+            <td>{{system.Id}}</td>
+            <td>{{system.Name}}</td>
+            <td>{{system.Team}}</td>
+            <td>{{system.Tech}}</td>
+            <td>{{system.Plan}}</td>
+            <td>{{system.Description}}</td>
+        </tr>
+</table>
