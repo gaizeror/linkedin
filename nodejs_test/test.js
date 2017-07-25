@@ -20,7 +20,7 @@ db.collection('developers').insertOne( {
 };
 
 var findFamilies = function(db, callback) {
-var cursor =db.collection('families').find( );
+var cursor =db.collection('developers').find( );
 cursor.each(function(err, doc) {
     assert.equal(err, null);
     if (doc != null) {
@@ -32,7 +32,7 @@ cursor.each(function(err, doc) {
 };
 
 var updateFamilies = function(db, callback) {
-db.collection('families').updateOne(
+db.collection('developers').updateOne(
     { "lastName" : "Andersen" },
     {
         $set: { "pets": [
@@ -47,7 +47,7 @@ db.collection('families').updateOne(
 };
 
 var removeFamilies = function(db, callback) {
-db.collection('families').deleteMany(
+db.collection('developers').deleteMany(
     { "lastName": "Andersesdsdsdn" },
     function(err, results) {
         console.log(results);
