@@ -1,27 +1,34 @@
-<h1>{{pageTitle}}</h1>
-Search By: <input type="text" class="form-controll"/>
-  <b>Name:</b>
-  <input type="text" class="form-control" id="usr">
-<table class="table">
-    <thead>
-        <th>ID</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Phone</th>
-        <th>Mail</th>
-        <th>Projects</th>
-        <th>Skills</th>
-        <th>Description</th>
-    </thead>
-    <tbody>
-        <tr *ngFor='let developer of developers'>
-            <td>{{developer.Id}}</td>
-            <td>{{developer.FirstName}}</td>
-            <td>{{developer.LastName}}</td>
-            <td>{{developer.Phone}}</td>
-            <td>{{developer.Mail}}</td>
-            <td>{{developer.Systems}}</td>
-            <td>{{developer.Skills}}</td>
-            <td>{{developer.Description}}</td>
-        </tr>
-</table>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        {{pageTitle}}
+    </div>
+    <div class="panel-body" >
+        <div class="row" >
+            Search By:
+            <input type="text" class="form-control" id="usr">     
+        </div><br />
+        <div class="row" >
+            <table class="table">
+                <thead>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Mail</th>
+                    <th>Projects</th>
+                    <th>Skills</th>
+                    <th>Description</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let developer of developers'>
+                        <td>{{developer.Id}}</td>
+                        <td>{{developer.FirstName}} {{developer.LastName}}</td>
+                        <td>{{developer.Phone}}</td>
+                        <td><a href='mailto:{{developer.Mail}}' >{{developer.Mail}}</a></td>
+                        <td>{{developer.Systems}}</td>
+                        <td>{{developer.Skills}}</td>
+                        <td>{{developer.Description}}</td>
+                    </tr>
+            </table>
+        </div>
+    </div>
+</div>
