@@ -2,7 +2,10 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http'
 import { RouterModule } from '@angular/router';
-import { Ng2TableModule } from 'ng2-table/ng2-table';
+import { FormsModule } from '@angular/forms';
+
+import { SystemFilter } from './systems/systemfilter.pipe'
+
 
 import { AppComponent }  from './app.component';
 import { WelcomeComponent } from './home/welcome.component';
@@ -20,10 +23,14 @@ import {SystemsComponent} from './systems/systems.component';
       {path: '', redirectTo: 'home', pathMatch: 'full'},
       {path: '**', redirectTo: 'home', pathMatch: 'full'}
     ]),
+<<<<<<< HEAD
     Ng2TableModule
+=======
+    FormsModule,
+>>>>>>> 7c7eabbd4245e7248e90eeb402ad67c28591bc7a
 
   ],
-  declarations: [ AppComponent, DevelopersListComponent, SystemsComponent, WelcomeComponent ],
+  declarations: [ AppComponent, DevelopersListComponent, SystemsComponent, WelcomeComponent,SystemFilter ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

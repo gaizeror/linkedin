@@ -4,20 +4,23 @@ export class SystemService {
     getSystems() : ISystem[] {
         return [
         {
-        "Id": 205918428,
+        "Id": 1,
         "Name": "Dev",
         "Team": "DevTeam",
         "Tech": ["MongoDB","Angular"],
         "Plan": "DevPlan" ,
-        "Description": "bla bla"
+        "Description": "bla bla",
+        "show": true
+
     },
     {
-        "Id": 205918428,
+        "Id": 2,
         "Name": "Prod",
         "Team": "ProdTeam",
         "Tech": ["SQL","Virtualization"],
         "Plan": "ProdPlan",
-        "Description": "bla bla"
+        "Description": "bla bla",
+        "show": true
     }
     ];
     }

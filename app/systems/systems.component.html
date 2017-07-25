@@ -1,4 +1,14 @@
 <h1> {{ title }} </h1>
+ <div>
+Search By: <input  [(ngModel)] = 'listFilter' type="text" class="form-controll"/>
+ </div>
+
+ <h3> Filtered By: {{ listFilter}} </h3>
+
+<!--   
+<b>Name:</b>
+  <input type="text" class="form-control" id="usr">  -->
+
 <table class="table">
     <thead>
         <th>ID</th>
@@ -9,7 +19,7 @@
         <th>Description</th>
     </thead>
     <tbody>
-        <tr *ngFor='let system of systems'>
+        <tr *ngFor="let system of systems | myfilter:listFilter">
             <td>{{system.Id}}</td>
             <td>{{system.Name}}</td>
             <td>{{system.Team}}</td>

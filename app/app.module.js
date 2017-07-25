@@ -10,7 +10,8 @@ var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var http_1 = require("@angular/http");
 var router_1 = require("@angular/router");
-var ng2_table_1 = require("ng2-table/ng2-table");
+var forms_1 = require("@angular/forms");
+var systemfilter_pipe_1 = require("./systems/systemfilter.pipe");
 var app_component_1 = require("./app.component");
 var welcome_component_1 = require("./home/welcome.component");
 var developers_list_component_1 = require("./developers/developers-list.component");
@@ -34,9 +35,9 @@ AppModule = __decorate([
                 { path: '', redirectTo: 'home', pathMatch: 'full' },
                 { path: '**', redirectTo: 'home', pathMatch: 'full' }
             ]),
-            ng2_table_1.Ng2TableModule
+            forms_1.FormsModule,
         ],
-        declarations: [app_component_1.AppComponent, developers_list_component_1.DevelopersListComponent, systems_component_1.SystemsComponent, welcome_component_1.WelcomeComponent, table_component_1.TableDemoComponent],
+        declarations: [app_component_1.AppComponent, developers_list_component_1.DevelopersListComponent, systems_component_1.SystemsComponent, welcome_component_1.WelcomeComponent, systemfilter_pipe_1.SystemFilter],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);
