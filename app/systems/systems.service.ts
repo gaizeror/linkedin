@@ -10,8 +10,6 @@ export class SystemService {
         "Tech": ["MongoDB","Angular"],
         "Plan": "DevPlan" ,
         "Description": "bla bla",
-        "show": true
-
     },
     {
         "Id": 2,
@@ -20,7 +18,6 @@ export class SystemService {
         "Tech": ["SQL","Virtualization"],
         "Plan": "ProdPlan",
         "Description": "bla bla",
-        "show": true
     }
     ];
     }
