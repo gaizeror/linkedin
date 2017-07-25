@@ -8,9 +8,9 @@ import { ISystem } from "./System";
 export class SystemFilter implements PipeTransform {
     transform(items: ISystem[], filter: string): any {
         if (!items || !filter) {
-            return items;
+            return items; 
         }
         // filter items array, items which match and return true will be kept, false will be filtered out
-        return items.filter(item => item.Name.indexOf(filter) !== -1);
-    }
+        return items.filter(item => item.Name.toLowerCase().indexOf(filter.toLowerCase()) !== -1);
+    }  
 }
