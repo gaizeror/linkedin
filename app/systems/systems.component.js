@@ -12,27 +12,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var systems_service_1 = require("./systems.service");
 var SystemsComponent = (function () {
-    // filterargs = { Name: this.listFilter};
     function SystemsComponent(systemServics) {
         this.title = 'Systems';
         this.listFilter = '';
-        //     this.getFilteredSystems();
         this.systems = systemServics.getSystems();
-        // this.filteredSystems = this.getFilteredSystems();
     }
-    SystemsComponent.prototype.getFilteredSystems = function () {
-        // for (var index = 1; index < 3; index++) {
-        //     var element = this.systems[index];
-        //     if (!this.systems[index].Name.includes(this.listFilter)) {
-        //         this.systems[index].show = false;
-        //     }
-        // }
-        // this.systems.forEach(element => {
-        //     if (!element.Name.includes(this.listFilter)) {
-        //         element.show = false;
-        //     }
-        // });
-    };
     return SystemsComponent;
 }());
 SystemsComponent = __decorate([

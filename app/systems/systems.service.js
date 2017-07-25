@@ -12,7 +12,6 @@ var SystemService = (function () {
                 "Tech": ["MongoDB", "Angular"],
                 "Plan": "DevPlan",
                 "Description": "bla bla",
-                "show": true
             },
             {
                 "Id": 2,
@@ -21,7 +20,6 @@ var SystemService = (function () {
                 "Tech": ["SQL", "Virtualization"],
                 "Plan": "ProdPlan",
                 "Description": "bla bla",
-                "show": true
             }
         ];
     };
