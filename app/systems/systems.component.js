@@ -14,6 +14,7 @@ var systems_service_1 = require("./systems.service");
 var SystemsComponent = (function () {
     function SystemsComponent(systemServics) {
         this.title = 'Systems';
+        this.listFilter = 'cart';
         this.systems = systemServics.getSystems();
     }
     return SystemsComponent;

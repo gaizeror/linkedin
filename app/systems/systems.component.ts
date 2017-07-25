@@ -9,6 +9,7 @@ import { SystemService } from "./systems.service";
 export class SystemsComponent {
     public title : string  = 'Systems';
     systems: ISystem[];
+    listFilter: string = 'cart';
 
     constructor (systemServics: SystemService){
         this.systems = systemServics.getSystems();
