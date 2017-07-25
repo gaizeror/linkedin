@@ -2,8 +2,9 @@
     <div class="panel-heading">
         {{title}}
     </div>
+    <br />
  <div>
-Search By: <input  [(ngModel)] = 'listFilter' type="text" class="form-controll"/>
+Search: <input  [(ngModel)] = 'listFilter' type="text" class="form-controll"/>
  </div>
 
  <h3 *ngIf = "listFilter != '' " > Searching "{{ listFilter}}" in system's name or developing team </h3>
@@ -36,6 +37,7 @@ Search By: <input  [(ngModel)] = 'listFilter' type="text" class="form-controll"/
                 <h6 class="list-group-item-heading" *ngIf = 'system.show' >Plan: {{system.Plan}}</h6>
                 <p class="list-group-item-text" *ngIf = 'system.show'>{{system.Description}}</p>
             </button>
+            <br />
         </div>
 <!-- </table> -->
 </div>
