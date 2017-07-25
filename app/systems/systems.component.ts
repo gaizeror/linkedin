@@ -3,7 +3,8 @@ import { ISystem } from "./System";
 import { SystemService } from "./systems.service";
 
 @Component({
-    templateUrl: 'app/systems/systems.component.html'
+    templateUrl: 'app/systems/systems.component.html',
+    providers: [SystemService]
 })
 export class SystemsComponent {
     public title : string  = 'Systems';

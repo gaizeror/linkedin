@@ -20,7 +20,8 @@ var SystemsComponent = (function () {
 }());
 SystemsComponent = __decorate([
     core_1.Component({
-        templateUrl: 'app/systems/systems.component.html'
+        templateUrl: 'app/systems/systems.component.html',
+        providers: [systems_service_1.SystemService]
     }),
     __metadata("design:paramtypes", [systems_service_1.SystemService])
 ], SystemsComponent);
