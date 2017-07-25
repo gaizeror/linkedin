@@ -8,7 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
+var http_1 = require("@angular/http");
+var router_1 = require("@angular/router");
 var app_component_1 = require("./app.component");
+var welcome_component_1 = require("./home/welcome.component");
 var developers_list_component_1 = require("./developers/developers-list.component");
 var systems_component_1 = require("./systems/systems.component");
 var AppModule = (function () {
@@ -18,8 +21,18 @@ var AppModule = (function () {
 }());
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule],
-        declarations: [app_component_1.AppComponent, developers_list_component_1.DevelopersListComponent, systems_component_1.SystemsComponent],
+        imports: [
+            platform_browser_1.BrowserModule,
+            http_1.HttpModule,
+            router_1.RouterModule.forRoot([
+                { path: 'home', component: welcome_component_1.WelcomeComponent },
+                { path: 'developers', component: developers_list_component_1.DevelopersListComponent },
+                { path: 'systems', component: systems_component_1.SystemsComponent },
+                { path: '', redirectTo: 'home', pathMatch: 'full' },
+                { path: '**', redirectTo: 'home', pathMatch: 'full' }
+            ])
+        ],
+        declarations: [app_component_1.AppComponent, developers_list_component_1.DevelopersListComponent, systems_component_1.SystemsComponent, welcome_component_1.WelcomeComponent],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);

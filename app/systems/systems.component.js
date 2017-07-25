@@ -33,7 +33,6 @@ var SystemsComponent = (function () {
 }());
 SystemsComponent = __decorate([
     core_1.Component({
-        selector: 'li-sys',
         templateUrl: 'app/systems/systems.component.html'
     })
 ], SystemsComponent);

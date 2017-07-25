@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 
 @Component({
-    selector : 'li-sys',
     templateUrl: 'app/systems/systems.component.html'
 })
 export class SystemsComponent {

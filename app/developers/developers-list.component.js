@@ -37,7 +37,6 @@ var DevelopersListComponent = (function () {
 }());
 DevelopersListComponent = __decorate([
     core_1.Component({
-        selector: 'dl-app',
         templateUrl: 'app/developers/developers-list.component.html'
     })
 ], DevelopersListComponent);

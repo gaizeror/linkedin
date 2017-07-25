@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { IDeveloper } from './developer';
 @Component({
-    selector: 'dl-app',
     templateUrl: 'app/developers/developers-list.component.html'
 })
 export class DevelopersListComponent {
