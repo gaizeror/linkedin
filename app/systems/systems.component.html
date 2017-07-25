@@ -25,12 +25,12 @@ Search By: <input  [(ngModel)] = 'listFilter' type="text" class="form-controll"/
         </tr> -->
 
         <div class="list-group" *ngFor="let system of systems | myfilter:listFilter">
-            <a href="#" class="list-group-item active">
+            <button (click) = 'toggleData(system)' class="list-group-item active">
                 <h4 class="list-group-item-heading">{{system.Name}}</h4>
-                <h6 class="list-group-item-heading" >Owner Team: {{system.Team}}</h6>
-                <h6 class="list-group-item-heading">Tech: {{system.Tech}}</h6>
-                <h6 class="list-group-item-heading">Plan: {{system.Plan}}</h6>
+                <h6 class="list-group-item-heading" *ngIf = 'system.show' >Owner Team: {{system.Team}}</h6>
+                <h6 class="list-group-item-heading" *ngIf = 'system.show' >Tech: {{system.Tech}}</h6>
+                <h6 class="list-group-item-heading" *ngIf = 'system.show' >Plan: {{system.Plan}}</h6>
                 <p class="list-group-item-text">{{system.Description}}</p>
-            </a>
+            </button>
         </div>
 <!-- </table> -->

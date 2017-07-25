@@ -14,6 +14,7 @@ var developer_service_1 = require("./developer.service");
 var DevelopersListComponent = (function () {
     function DevelopersListComponent(DeveloperService) {
         this.pageTitle = 'Developers';
+        this.listFilter = '';
         this.developers = DeveloperService.getDevelopers();
     }
     return DevelopersListComponent;

@@ -3,9 +3,10 @@
         {{pageTitle}}
     </div>
     <div class="panel-body" >
+        <h1>{{listFilter}}</h1>
         <div class="row" >
             Search By:
-            <input type="text" class="form-control" id="usr">     
+            <input  [(ngModel)] = 'listFilter' type="text" class="form-control" id="usr">     
         </div><br />
         <div class="row" >
             <table class="table">
@@ -19,7 +20,7 @@
                     <th>Description</th>
                 </thead>
                 <tbody>
-                    <tr *ngFor='let developer of developers'>
+                    <tr *ngFor='let developer of developers | myfilter:listFilter'>
                         <td>{{developer.Id}}</td>
                         <td>{{developer.FirstName}} {{developer.LastName}}</td>
                         <td>{{developer.Phone}}</td>
