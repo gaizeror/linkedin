@@ -34,8 +34,6 @@ var SystemsComponent = (function () {
             this.newSysFlag = false;
         }
     };
-    SystemsComponent.prototype.addMySystem = function () {
-    };
     return SystemsComponent;
 }());
 SystemsComponent = __decorate([
