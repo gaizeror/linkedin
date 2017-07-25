@@ -12,24 +12,24 @@ var DevelopersListComponent = (function () {
         this.pageTitle = 'Developers';
         this.developers = [
             {
-                "productId": 1,
-                "productName": "Leaf Rake",
-                "productCode": "GDN-0011",
-                "releaseDate": "March 19, 2016",
-                "description": "Leaf rake with 48-inch wooden handle.",
-                "price": 19.95,
-                "starRating": 3.2,
-                "imageUrl": "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png"
+                "Id": 205918428,
+                "FirstName": "Dor",
+                "LastName": "Alteresku",
+                "Phone": "050-3991-998",
+                "Mail": "doralteres@gmail.com",
+                "Projects": ["icytower", "fifa 2017"],
+                "Skills": ["Jenkins", "Angular"],
+                "Description": "bla bla"
             },
             {
-                "productId": 2,
-                "productName": "Leaf Rake",
-                "productCode": "GDN-0011",
-                "releaseDate": "March 19, 2016",
-                "description": "Leaf rake with 48-inch wooden handle.",
-                "price": 19.95,
-                "starRating": 3.2,
-                "imageUrl": "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png"
+                "Id": 305462343,
+                "FirstName": "Moshe",
+                "LastName": "Gilboa",
+                "Phone": "054-2370-144",
+                "Mail": "mgilboa@outlook.com",
+                "Projects": ["SanAndress", "pes 2017"],
+                "Skills": ["NodeJS", "Angular"],
+                "Description": "bla"
             }
         ];
     }
