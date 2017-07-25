@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
 import { SystemFilter } from './systems/systemfilter.pipe'
-
+import { DeveloperFilter } from './developers/developersfilter.pipe'
 
 import { AppComponent }  from './app.component';
 import { WelcomeComponent } from './home/welcome.component';
@@ -26,7 +26,7 @@ import {SystemsComponent} from './systems/systems.component';
     FormsModule,
 
   ],
-  declarations: [ AppComponent, DevelopersListComponent, SystemsComponent, WelcomeComponent,SystemFilter ],
+  declarations: [ AppComponent, DevelopersListComponent, SystemsComponent, WelcomeComponent,SystemFilter, DeveloperFilter ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

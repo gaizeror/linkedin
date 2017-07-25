@@ -11,4 +11,5 @@ export class DevelopersListComponent {
     constructor (DeveloperService: DeveloperService){
         this.developers = DeveloperService.getDevelopers();
     }
+    listFilter: string = '';
 }
