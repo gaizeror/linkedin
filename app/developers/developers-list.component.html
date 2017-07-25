@@ -5,8 +5,7 @@
     <div class="panel-body" >
         <h1>{{listFilter}}</h1>
         <div class="row" >
-            Search By:
-            <input  [(ngModel)] = 'listFilter' type="text" class="form-control" id="usr">     
+            <input  [(ngModel)] = 'listFilter' type="text" class="form-control" placeholder="Search everything... add # to search Skills!" >     
         </div><br />
         <div class="row" >
             <table class="table">
@@ -17,7 +16,6 @@
                     <th>Mail</th>
                     <th>Projects</th>
                     <th>Skills</th>
-                    <th>Description</th>
                 </thead>
                 <tbody>
                     <tr *ngFor='let developer of developers | mydfilter:listFilter'>
@@ -27,7 +25,6 @@
                         <td><a href='mailto:{{developer.Mail}}' >{{developer.Mail}}</a></td>
                         <td>{{developer.Systems}}</td>
                         <td>{{developer.Skills}}</td>
-                        <td>{{developer.Description}}</td>
                     </tr>
             </table>
         </div>
