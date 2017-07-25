@@ -5,7 +5,7 @@ export class SystemService {
         return [
         {
         "Id": 1,
-        "Name": "Dev",
+        "Name": "Jenkins",
         "Team": "Team A",
         "Tech": ["MongoDB","Angular"],
         "Plan": "DevPlan" ,
@@ -14,13 +14,31 @@ export class SystemService {
     },
     {
         "Id": 2,
-        "Name": "Prod",
+        "Name": "Git",
         "Team": "Team B",
         "Tech": ["SQL","Virtualization"],
         "Plan": "ProdPlan",
         "Description": "bla bla",
         "show": false,
-    }
+    },
+        {
+        "Id": 3,
+        "Name": "TFS",
+        "Team": "Team C",
+        "Tech": ["SQL","Virtualization"],
+        "Plan": "ProdPlan",
+        "Description": "bla bla",
+        "show": false,
+    },
+        {
+        "Id": 4,
+        "Name": "Artifactory",
+        "Team": "Team D",
+        "Tech": ["SQL","Virtualization"],
+        "Plan": "ProdPlan",
+        "Description": "bla bla",
+        "show": false,
+    },
     ];
     }
 }

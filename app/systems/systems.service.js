@@ -7,7 +7,7 @@ var SystemService = (function () {
         return [
             {
                 "Id": 1,
-                "Name": "Dev",
+                "Name": "Jenkins",
                 "Team": "Team A",
                 "Tech": ["MongoDB", "Angular"],
                 "Plan": "DevPlan",
@@ -16,13 +16,31 @@ var SystemService = (function () {
             },
             {
                 "Id": 2,
-                "Name": "Prod",
+                "Name": "Git",
                 "Team": "Team B",
                 "Tech": ["SQL", "Virtualization"],
                 "Plan": "ProdPlan",
                 "Description": "bla bla",
                 "show": false,
-            }
+            },
+            {
+                "Id": 3,
+                "Name": "TFS",
+                "Team": "Team C",
+                "Tech": ["SQL", "Virtualization"],
+                "Plan": "ProdPlan",
+                "Description": "bla bla",
+                "show": false,
+            },
+            {
+                "Id": 4,
+                "Name": "Artifactory",
+                "Team": "Team D",
+                "Tech": ["SQL", "Virtualization"],
+                "Plan": "ProdPlan",
+                "Description": "bla bla",
+                "show": false,
+            },
         ];
     };
     return SystemService;
