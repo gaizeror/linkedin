@@ -15,7 +15,7 @@ var SystemFilter = (function () {
             return items;
         }
         // filter items array, items which match and return true will be kept, false will be filtered out
-        return items.filter(function (item) { return item.Name.toLowerCase().indexOf(filter.toLowerCase()) !== -1; });
+        return items.filter(function (item) { return (item.Name.toLowerCase().indexOf(filter.toLowerCase()) !== -1) || (item.Team.toLowerCase().indexOf(filter.toLowerCase()) !== -1); });
     };
     return SystemFilter;
 }());

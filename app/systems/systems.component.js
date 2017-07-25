@@ -17,6 +17,14 @@ var SystemsComponent = (function () {
         this.listFilter = '';
         this.systems = systemServics.getSystems();
     }
+    SystemsComponent.prototype.toggleData = function (system) {
+        if (!system.show) {
+            system.show = true;
+        }
+        else {
+            system.show = false;
+        }
+    };
     return SystemsComponent;
 }());
 SystemsComponent = __decorate([

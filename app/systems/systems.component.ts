@@ -14,5 +14,14 @@ export class SystemsComponent {
 
     constructor (systemServics: SystemService){
         this.systems = systemServics.getSystems();
-    }       
+    }
+    
+    toggleData(system: ISystem){
+        if (!system.show){
+            system.show = true;
+        }
+        else{
+            system.show = false;
+        }
+    }
 }

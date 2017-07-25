@@ -7,8 +7,8 @@ Search By: <input  [(ngModel)] = 'listFilter' type="text" class="form-controll"/
  </div>
 
  <h3> Filtered By: {{ listFilter}} </h3>
- 
-<table class="table">
+
+<!-- <table class="table">
     <thead>
         <th>ID</th>
         <th>system Name</th>
@@ -25,7 +25,15 @@ Search By: <input  [(ngModel)] = 'listFilter' type="text" class="form-controll"/
             <td>{{system.Tech}}</td>
             <td>{{system.Plan}}</td>
             <td>{{system.Description}}</td>
-        </tr>
-    </tbody>
-</table>
-</div>
+        </tr> -->
+
+        <div class="list-group" *ngFor="let system of systems | myfilter:listFilter">
+            <button (click) = 'toggleData(system)' class="list-group-item active">
+                <h4 class="list-group-item-heading">{{system.Name}}</h4>
+                <h6 class="list-group-item-heading" *ngIf = 'system.show' >Owner Team: {{system.Team}}</h6>
+                <h6 class="list-group-item-heading" *ngIf = 'system.show' >Tech: {{system.Tech}}</h6>
+                <h6 class="list-group-item-heading" *ngIf = 'system.show' >Plan: {{system.Plan}}</h6>
+                <p class="list-group-item-text">{{system.Description}}</p>
+            </button>
+        </div>
+<!-- </table> -->

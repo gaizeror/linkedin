@@ -6,18 +6,20 @@ export class SystemService {
         {
         "Id": 1,
         "Name": "Dev",
-        "Team": "DevTeam",
+        "Team": "Team A",
         "Tech": ["MongoDB","Angular"],
         "Plan": "DevPlan" ,
         "Description": "bla bla",
+        "show":false,
     },
     {
         "Id": 2,
         "Name": "Prod",
-        "Team": "ProdTeam",
+        "Team": "Team B",
         "Tech": ["SQL","Virtualization"],
         "Plan": "ProdPlan",
         "Description": "bla bla",
+        "show": false,
     }
     ];
     }
