@@ -10,6 +10,8 @@ export class SystemsComponent {
     public title : string  = 'Systems';
     public systems: ISystem[];
 
+    public newSysFlag: boolean = false;
+
     listFilter: string = '';    
 
     constructor (systemServics: SystemService){
@@ -23,5 +25,17 @@ export class SystemsComponent {
         else{
             system.show = false;
         }
+    }
+    addNewSysToggle(){
+        if (!this.newSysFlag){
+            this.newSysFlag = true;
+        }
+        else{
+            this.newSysFlag = false;
+        }
+    }
+
+    addMySystem(){
+    
     }
 }

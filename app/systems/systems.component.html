@@ -4,40 +4,87 @@
     </div>
     <br />
  <div>
-Search: <input  [(ngModel)] = 'listFilter' type="text" class="form-controll"/>
- </div>
 
- <h3 *ngIf = "listFilter != '' " > Searching "{{ listFilter}}" in system's name or developing team </h3>
- <h3 *ngIf = "listFilter == '' " > Enter your search to filter in system's name or developing team </h3>
+<button (click) = 'addNewSysToggle()' *ngIf = '!newSysFlag' type="button" class="btn btn-default navbar-btn">Add new system</button>
+<button (click) = 'addNewSysToggle()' *ngIf = 'newSysFlag' type="button" class="btn btn-default navbar-btn">search in systems</button>
+<h4 *ngIf = '!newSysFlag'>
 
-<!-- <table class="table">
-    <thead>
-        <th>ID</th>
-        <th>system Name</th>
-        <th>Owner Team</th>
-        <th>Used Teches</th>
-        <th>System's Plan</th>
-        <th>Description</th>
-    </thead>
-    <tbody>
-        <tr *ngFor="let system of systems | myfilter:listFilter">
-            <td>{{system.Id}}</td>
-            <td>{{system.Name}}</td>
-            <td>{{system.Team}}</td>
-            <td>{{system.Tech}}</td>
-            <td>{{system.Plan}}</td>
-            <td>{{system.Description}}</td>
-        </tr> -->
+    Search: <input   [(ngModel)] = 'listFilter' type="text" class="form-controll"/>
+</h4>
 
-        <div class="list-group" *ngFor="let system of systems | myfilter:listFilter">
-            <button (click) = 'toggleData(system)' class="list-group-item active">
-                <h4 class="list-group-item-heading">{{system.Name}}</h4>
-                <h6 class="list-group-item-heading"  >Developed by: {{system.Team}}</h6>
-                <h6 class="list-group-item-heading" *ngIf = 'system.show' >Tech: {{system.Tech}}</h6>
-                <h6 class="list-group-item-heading" *ngIf = 'system.show' >Plan: {{system.Plan}}</h6>
-                <p class="list-group-item-text" *ngIf = 'system.show'>{{system.Description}}</p>
-            </button>
-            <br />
-        </div>
-<!-- </table> -->
+    </div>
+    <div *ngIf = '!newSysFlag'>
+        <h3 *ngIf = "listFilter != '' " > Searching "{{ listFilter}}" in system's name or developing team </h3>
+        <h3 *ngIf = "listFilter == '' " > Enter your search to filter in system's name or developing team </h3>
+
+            <div class="list-group" *ngFor="let system of systems | myfilter:listFilter">
+                <button (click) = 'toggleData(system)' class="list-group-item active">
+                    <h4 class="list-group-item-heading">{{system.Name}}</h4>
+                    <h6 class="list-group-item-heading"  >Developed by: {{system.Team}}</h6>
+                    <h6 class="list-group-item-heading" *ngIf = 'system.show' >Tech: {{system.Tech}}</h6>
+                    <h6 class="list-group-item-heading" *ngIf = 'system.show' >Plan: {{system.Plan}}</h6>
+                    <p class="list-group-item-text" *ngIf = 'system.show'>{{system.Description}}</p>
+                </button>
+                <br />
+            </div>
+    </div>
+
+    <div *ngIf = 'newSysFlag'>
+         <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="well-block">
+                        <div class="well-title">
+                            <h2>Add new system</h2>
+                        </div>
+                        <form method="POST" action="http://backend:8000">
+                            <!-- Form start -->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label" for="name">Name</label>
+                                        <input id="name" name="name" type="text" placeholder="Name" class="form-control input-md">
+                                    </div>
+                                </div>
+                                <!-- Text input-->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label" for="Developed">Developed by</label>
+                                        <input id="Developed" name="Developed" type="text" placeholder="Developed by" class="form-control input-md">
+                                    </div>
+                                </div>
+                                <!-- Text input-->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label" for="Teches">Teches</label>
+                                        <input id="Teches" name="Teches" type="text" placeholder="Teches" class="form-control input-md">
+                                    </div>
+                                </div>
+                                <!-- Select Basic -->
+                                <div class="col-md-6">
+                                   <div class="form-group">
+                                        <label class="control-label" for="Plan">Plan</label>
+                                        <input id="Plan" name="Plan" type="text" placeholder="Plan" class="form-control input-md">
+                                    </div>
+                                </div>
+                                <!-- Select Basic -->
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="control-label" for="Description">Description</label>
+                                        <input id="Description" name="Description" type="text" placeholder="Description" class="form-control input-md">
+                                    </div>
+                                </div>
+                                <!-- Button -->
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <button type="submit" id="singlebutton" name="singlebutton" class="btn btn-default">Add my system</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <!-- form end -->
+                    </div>
+                </div>
+            </div>
+    </div>
 </div>
