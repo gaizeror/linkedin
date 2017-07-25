@@ -1,26 +1,22 @@
 import { Component } from '@angular/core';
+import { ISystem } from "./System";
+import { SystemService } from "./systems.service";
 
 @Component({
+<<<<<<< HEAD
     templateUrl: 'app/systems/systems.component.html'
+=======
+    selector : 'li-sys',
+    templateUrl: 'app/systems/systems.component.html',
+    providers: [SystemService],
+    
+>>>>>>> ef3e151bef8b32311ef1556b23a634362d08c761
 })
 export class SystemsComponent {
-    public title : string  = 'hello moish';
-    systems : any [] = [
-        {
-        "Id": 205918428,
-        "Name": "Dev",
-        "Team": "DevTeam",
-        "Tech": ["MongoDB","Angular"],
-        "Plan": "DevPlan",
-        "Description": "bla bla"
-    },
-    {
-        "Id": 205918428,
-        "Name": "Prod",
-        "Team": "ProdTeam",
-        "Tech": ["SQL","Virtualization"],
-        "Plan": "ProdPlan",
-        "Description": "bla bla"
+    public title : string  = 'Systems';
+    systems: ISystem[];
+
+    constructor (systemServics: SystemService){
+        this.systems = systemServics.getSystems();
     }
-    ];
 }
