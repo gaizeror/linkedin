@@ -8,7 +8,7 @@ var SystemService = (function () {
             {
                 "Id": 1,
                 "Name": "Dev",
-                "Team": "DevTeam",
+                "Team": "Team A",
                 "Tech": ["MongoDB", "Angular"],
                 "Plan": "DevPlan",
                 "Description": "bla bla",
@@ -16,7 +16,7 @@ var SystemService = (function () {
             {
                 "Id": 2,
                 "Name": "Prod",
-                "Team": "ProdTeam",
+                "Team": "Team B",
                 "Tech": ["SQL", "Virtualization"],
                 "Plan": "ProdPlan",
                 "Description": "bla bla",
