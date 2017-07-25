@@ -5,4 +5,5 @@ export interface ISystem {
         "Tech": any[];
         "Plan": string;
         "Description": string;
+        "show": boolean;
 }

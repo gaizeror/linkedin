@@ -9,7 +9,9 @@ export class SystemService {
         "Team": "DevTeam",
         "Tech": ["MongoDB","Angular"],
         "Plan": "DevPlan" ,
-        "Description": "bla bla"
+        "Description": "bla bla",
+        "show": true
+
     },
     {
         "Id": 205918428,
@@ -17,7 +19,8 @@ export class SystemService {
         "Team": "ProdTeam",
         "Tech": ["SQL","Virtualization"],
         "Plan": "ProdPlan",
-        "Description": "bla bla"
+        "Description": "bla bla",
+        "show": true
     }
     ];
     }

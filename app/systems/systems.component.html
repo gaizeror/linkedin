@@ -1,8 +1,13 @@
 <h1> {{ title }} </h1>
- 
+ <div>
 Search By: <input  [(ngModel)] = 'listFilter' type="text" class="form-controll"/>
-  <b>Name:</b>
-  <input type="text" class="form-control" id="usr"> 
+ </div>
+
+ <h3> Filtered By: {{ listFilter}} </h3>
+
+<!--   
+<b>Name:</b>
+  <input type="text" class="form-control" id="usr">  -->
 
 <table class="table">
     <thead>
