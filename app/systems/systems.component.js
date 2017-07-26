@@ -14,6 +14,7 @@ var systems_service_1 = require("./systems.service");
 var SystemsComponent = (function () {
     function SystemsComponent(systemServics) {
         this.title = 'Systems';
+        this.newSysFlag = false;
         this.listFilter = '';
         this.systems = systemServics.getSystems();
     }
@@ -23,6 +24,14 @@ var SystemsComponent = (function () {
         }
         else {
             system.show = false;
+        }
+    };
+    SystemsComponent.prototype.addNewSysToggle = function () {
+        if (!this.newSysFlag) {
+            this.newSysFlag = true;
+        }
+        else {
+            this.newSysFlag = false;
         }
     };
     return SystemsComponent;

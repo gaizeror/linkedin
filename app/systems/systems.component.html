@@ -3,43 +3,39 @@
         {{title}}
     </div>
     <br />
- <div class="panel-body">
-    <div class="row">
-<input  [(ngModel)] = 'listFilter' type="text" class="form-controll" placeholder="Search Systems.. "/>
- </div>
+    <div>
+        <div class="panel-body">
 
- <h3 *ngIf = "listFilter != '' " > Searching "{{ listFilter}}" in system's name or developing team </h3>
- <h3 *ngIf = "listFilter == '' " > Enter your search to filter in system's name or developing team </h3>
-
-<!-- <table class="table">
-    <thead>
-        <th>ID</th>
-        <th>system Name</th>
-        <th>Owner Team</th>
-        <th>Used Teches</th>
-        <th>System's Plan</th>
-        <th>Description</th>
-    </thead>
-    <tbody>
-        <tr *ngFor="let system of systems | myfilter:listFilter">
-            <td>{{system.Id}}</td>
-            <td>{{system.Name}}</td>
-            <td>{{system.Team}}</td>
-            <td>{{system.Tech}}</td>
-            <td>{{system.Plan}}</td>
-            <td>{{system.Description}}</td>
-        </tr> -->
-
-        <div class="list-group" *ngFor="let system of systems | myfilter:listFilter">
-            <button (click) = 'toggleData(system)' class="list-group-item active">
-                <h4 class="list-group-item-heading">{{system.Name}}</h4>
-                <h6 class="list-group-item-heading"  >Developed by: {{system.Team}}</h6>
-                <h6 class="list-group-item-heading" *ngIf = 'system.show' >Tech: {{system.Tech}}</h6>
-                <h6 class="list-group-item-heading" *ngIf = 'system.show' >Plan: {{system.Plan}}</h6>
-                <p class="list-group-item-text" *ngIf = 'system.show'>{{system.Description}}</p>
-            </button>
-            <br />
+            <button (click) = 'addNewSysToggle()' *ngIf = '!newSysFlag' type="button" class="btn btn-default navbar-btn">Add new system</button>
+            <button (click) = 'addNewSysToggle()' *ngIf = 'newSysFlag' type="button" class="btn btn-default navbar-btn">search in systems</button>
+            
+            <div *ngIf = '!newSysFlag' >
+                <input  [(ngModel)] = 'listFilter' type="text" class="form-controll" placeholder="Search Systems.. "/>
+            </div>
+        
+        
+            <div *ngIf = '!newSysFlag' >
+            
+                    <h3 *ngIf = "listFilter != '' " > Searching "{{ listFilter}}" in system's name or developing team </h3>
+                    <h3 *ngIf = "listFilter == '' " > Enter your search to filter in system's name or developing team </h3>
+                
+                
+                <div class="list-group"  *ngFor="let system of systems | myfilter: listFilter">
+                    <button (click) = 'toggleData(system)' class="list-group-item active">
+                        <h4 class="list-group-item-heading">{{system.Name}}</h4>
+                        <h6 class="list-group-item-heading"  >Developed by: {{system.Team}}</h6>
+                        <h6 class="list-group-item-heading" *ngIf = 'system.show' >Tech: {{system.Tech}}</h6>
+                        <h6 class="list-group-item-heading" *ngIf = 'system.show' >Plan: {{system.Plan}}</h6>
+                        <p class="list-group-item-text" *ngIf = 'system.show'>{{system.Description}}</p>
+                    </button>
+                    <br />
+                </div>
+            </div>
+            
+            
+            <div  *ngIf = 'newSysFlag' >
+                <li-form></li-form>
+            </div>
         </div>
-<!-- </table> -->
-</div>
+    </div>
 </div>

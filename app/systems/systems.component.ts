@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ISystem } from "./System";
 import { SystemService } from "./systems.service";
 
+
 @Component({
     templateUrl: 'app/systems/systems.component.html',
     providers: [SystemService]
@@ -9,6 +10,8 @@ import { SystemService } from "./systems.service";
 export class SystemsComponent {
     public title : string  = 'Systems';
     public systems: ISystem[];
+
+    public newSysFlag: boolean = false;
 
     listFilter: string = '';    
 
@@ -24,4 +27,15 @@ export class SystemsComponent {
             system.show = false;
         }
     }
+    addNewSysToggle(){
+        if (!this.newSysFlag){
+            this.newSysFlag = true;
+        }
+        else{
+            this.newSysFlag = false;
+        }
+    }
+
+    // addMySystem(){
+    // }
 }
