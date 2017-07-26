@@ -17,7 +17,8 @@ var DevelopersListComponent = (function () {
         this._DeveloperService = _DeveloperService;
         this.pageTitle = 'Developers';
         this.listFilter = '';
-        this.developers = this._DeveloperService.getFakeDevelopers(); //DeveloperService.getDevelopers();
+        //let anyobject : Observable<any[]> = this._DeveloperService.getanyDevelopers();//DeveloperService.getDevelopers();
+        this.developers = this._DeveloperService.getFakeDevelopers();
     }
     // ngOnInit(): void {
     //     this._DeveloperService.getGitHub()
@@ -26,6 +27,8 @@ var DevelopersListComponent = (function () {
     // }
     DevelopersListComponent.prototype.tabClick = function (str) {
         this.listFilter = "#" + str;
+        //console.log(this._DeveloperService.postJson({"theid":432438888888888888888825553366,"Firstname":"ljnljn","Lastname":"ljnljn","Phone":"nlj","Mail":"nl","Systems":"nl ","Description":"fds","Skills":[{"_id":"ddd","Endorse":0},{"_id":"lll","Endorse":0}]}));
+        this._DeveloperService.emtybody();
     };
     return DevelopersListComponent;
 }());

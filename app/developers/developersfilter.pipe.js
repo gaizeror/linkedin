@@ -15,12 +15,10 @@ var DeveloperFilter = (function () {
             return items;
         }
         // filter items array, items which match and return true will be kept, false will be filtered out
-        // if(filter.charAt(0) === '#'){
-        //     filter=filter.substr(1);
-        //         return items.filter(
-        //             item=> ((item.Skills.toString().toLowerCase().indexOf(filter.toLowerCase()) !== -1 ))
-        //         );
-        //     }
+        if (filter.charAt(0) === '#') {
+            filter = filter.substr(1);
+            return items.filter(function (item) { return (item.Skills.forEach(function (element) { (element.Skill.toLowerCase().indexOf(filter.toLowerCase()) !== -1); })); });
+        }
         return items.filter(function (item) { return ((item.FirstName + " " + item.LastName).toLowerCase().indexOf(filter.toLowerCase()) !== -1) ||
             (item.Id.toString().indexOf(filter) !== -1) ||
             (item.Phone.indexOf(filter) !== -1) ||

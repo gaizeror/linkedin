@@ -1,5 +1,5 @@
 import { IDeveloper } from './developer';
-import {Http, Response} from "@angular/http";
+import {Http, Response, Headers, RequestOptions} from "@angular/http";
 import {Injectable} from "@angular/core";
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/do';
@@ -22,48 +22,71 @@ export class DeveloperService {
         "Phone": "050-3991-998",
         "Mail": "doralteres@gmail.com",
         "Systems": ["icytower", "fifa 2017"],
-        "Skills": this._DeveloperSkillsService.tmpTest(),
+        "Skills": this._DeveloperSkillsService.findDevSkills(205918428),
         "Description": "bla bla"
-    }
-    // {
-    //     "Id": 305462343,
-    //     "FirstName": "Moshe",
-    //     "LastName": "Gilboa",
-    //     "Phone": "054-2370-144",
-    //     "Mail": "mgilboa@outlook.com",
-    //     "Systems": ["SanAndress", "pes 2017"],
-    //     //"Skills": ["NodeJS", "Angular"],
-    //     "Description": "bla"
-    // },
-    // {
-    //     "Id": 205680614,
-    //     "FirstName": "Or",
-    //     "LastName": "Gaizer",
-    //     "Phone": "050-3991-998",
-    //     "Mail": "gaizeror@gmail.com",
-    //     "Systems": ["Beta", "fifa 2017"],
-    //     //"Skills": ["SaltStack", "MongoDB"],
-    //     "Description": ""
-    // },
-    // {
-    //     "Id": 308576388,
-    //     "FirstName": "Tomer",
-    //     "LastName": "Salton",
-    //     "Phone": "054-2370-144",
-    //     "Mail": "saltontomer@outlook.com",
-    //     "Systems": ["SanAndress", "pes 2017"],
-    //     //"Skills": ["EXchange", "MongoDB"],
-    //     "Description": "bla"
-    // }
+    },
+    {
+        "Id": 32356787,
+        "FirstName": "Moish",
+        "LastName": "Gilboa",
+        "Phone": "050-3441-321",
+        "Mail": "mgilboa@gmail.com",
+        "Systems": ["Counter Strike", "Pes 2002"],
+        "Skills": this._DeveloperSkillsService.findDevSkills(32356787),
+        "Description": "bla bla"
+    },
+    {
+        "Id": 28744323,
+        "FirstName": "Or",
+        "LastName": "Gaizer",
+        "Phone": "052-1123-545",
+        "Mail": "gaizeror@gmail.com",
+        "Systems": ["Beta", "NBA2K"],
+        "Skills": this._DeveloperSkillsService.findDevSkills(28744323),
+        "Description": "bla bla"
+    },
+    {
+        "Id": 313765898,
+        "FirstName": "Tomer",
+        "LastName": "Salton",
+        "Phone": "050-1514-877",
+        "Mail": "saltontomer@outlook.com",
+        "Systems": ["icytower", "fifa 2017"],
+        "Skills": this._DeveloperSkillsService.findDevSkills(313765898),
+        "Description": "bla bla"
+    },
+    {
+        "Id": 24355633,
+        "FirstName": "Aviv",
+        "LastName": "Israeli",
+        "Phone": "050-1146-454",
+        "Mail": "avivis@gmail.com",
+        "Systems": ["Beta", "NBA2K"],
+        "Skills": this._DeveloperSkillsService.findDevSkills(24355633),
+        "Description": "bla bla"
+    },
+    {
+        "Id": 20766443,
+        "FirstName": "Ilana",
+        "LastName": "Mizrahi",
+        "Phone": "050-2322-764",
+        "Mail": "MizIla@walla.com",
+        "Systems": ["GTA", "WWE"],
+        "Skills": this._DeveloperSkillsService.findDevSkills(20766443),
+        "Description": "bla bla"
+    },
         ];
     }
-    getDevelopers() : Observable<IDeveloper[]>{
-        
+    getDevelopers (): Observable<IDeveloper[]> {
         return this._http.get("http://13.94.133.126:3000/list")
-        .map((response: Response) => <IDeveloper[]>response.json())
-        .do(data => console.log('All: ' +  JSON.stringify(data)))
+            .map(this.extractData)
             .catch(this.handleError);
     }
+    
+    private extractData(res: Response): IDeveloper[] {
+    let body = res.json();
+    return (body.data || []) as IDeveloper[];
+}
         getanyDevelopers() : Observable<any[]>{
         
         return this._http.get("http://13.94.133.126:3000/list")
@@ -84,9 +107,20 @@ export class DeveloperService {
             return Observable.throw(error.json().error || 'Server error');
         }
 
-        jsontest(url: string, data: any[]) :void{
-            this._http.post(url, JSON.stringify(data), {headers:{'Content-Type': 'application/json'}})
-        }
+        headers = new Headers({
+    'Content-Type': 'application/json'
+    });
+
+    postJson( data: any): Observable<Response> {
+        return this._http.post(
+        "http://13.94.133.126:3000/newdev",
+        null,
+        {headers: this.headers, body:JSON.stringify(data)}
+    ).map((res: Response) => res.json());
+  };
+emtybody() :Observable<Response> {
+    return this._http.post("http://13.94.133.126:3000/newdev", null);
+}
 
 
 }

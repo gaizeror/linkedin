@@ -26,48 +26,58 @@ var DeveloperSkillsService = (function () {
                 "Endorse": 1
             },
             {
-                "Id": 305462343,
+                "Id": 32356787,
                 "Skill": "NodeJS",
                 "Endorse": 4
             },
             {
-                "Id": 305462343,
+                "Id": 32356787,
                 "Skill": "Angular",
                 "Endorse": 8
             },
             {
-                "Id": 205918428,
+                "Id": 28744323,
                 "Skill": "Angular",
                 "Endorse": 4
             },
             {
-                "Id": 205680614,
+                "Id": 28744323,
                 "Skill": "SaltStack",
                 "Endorse": 6
             },
             {
-                "Id": 205680614,
+                "Id": 313765898,
                 "Skill": "Angular",
                 "Endorse": 4
             },
             {
-                "Id": 308576388,
+                "Id": 313765898,
                 "Skill": "Exchange",
                 "Endorse": 5
             },
             {
-                "Id": 308576388,
+                "Id": 24355633,
                 "Skill": "Angular",
                 "Endorse": 4
             },
             {
-                "Id": 308576388,
+                "Id": 24355633,
                 "Skill": "MongoDB",
                 "Endorse": 2
             },
             {
-                "Id": 205680614,
-                "Skill": "Angular",
+                "Id": 24355633,
+                "Skill": "Jenkins",
+                "Endorse": 4
+            },
+            {
+                "Id": 20766443,
+                "Skill": "MongoDB",
+                "Endorse": 2
+            },
+            {
+                "Id": 20766443,
+                "Skill": "NodeJS",
                 "Endorse": 4
             }
         ];

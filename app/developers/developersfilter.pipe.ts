@@ -11,12 +11,11 @@ export class DeveloperFilter implements PipeTransform {
             return items;
         }
         // filter items array, items which match and return true will be kept, false will be filtered out
-        // if(filter.charAt(0) === '#'){
-        //     filter=filter.substr(1);
-        //         return items.filter(
-        //             item=> ((item.Skills.toString().toLowerCase().indexOf(filter.toLowerCase()) !== -1 ))
-        //         );
-        //     }
+        if(filter.charAt(0) === '#'){
+            filter=filter.substr(1);
+                return items.filter(
+                    item=> (item.Skills.forEach(element => {(element.Skill.toLowerCase().indexOf(filter.toLowerCase()) !== -1 )})));
+            }
         return items.filter(
             item => ((item.FirstName+" "+item.LastName).toLowerCase().indexOf(filter.toLowerCase()) !== -1)|| 
             (item.Id.toString().indexOf(filter) !== -1)||
