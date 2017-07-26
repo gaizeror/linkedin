@@ -20,7 +20,7 @@ var DevelopersListComponent = (function () {
     }
     DevelopersListComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this._DeveloperService.getanyDevelopers()
+        this._DeveloperService.getGitHub()
             .subscribe(function (products) { return _this.developers = products; }, function (error) { return _this.errorMessage = error; });
     };
     return DevelopersListComponent;

@@ -16,7 +16,7 @@ export class DevelopersListComponent implements OnInit{
     listFilter: string = '';
 
     ngOnInit(): void {
-        this._DeveloperService.getanyDevelopers()
+        this._DeveloperService.getGitHub()
                 .subscribe(products => this.developers = products,
                            error => this.errorMessage = <any>error);
     }

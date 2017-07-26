@@ -68,6 +68,14 @@ export class DeveloperService {
         .do(data => console.log('All: ' +  JSON.stringify(data)))
             .catch(this.handleError);
     }
+
+    getGitHub() : Observable<any[]>{
+        
+        return this._http.get("http://13.94.133.126:3000/list")
+        .map((response: Response) => <any[]>response.json())
+        .do(data => console.log('All: ' +  JSON.stringify(data)))
+            .catch(this.handleError);
+    }
         private handleError(error: Response) {
             console.error(error);
             return Observable.throw(error.json().error || 'Server error');
