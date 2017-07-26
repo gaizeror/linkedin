@@ -12,11 +12,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var developer_service_1 = require("./developer.service");
 var DevelopersListComponent = (function () {
-    function DevelopersListComponent(DeveloperService) {
+    function DevelopersListComponent(_DeveloperService) {
+        this._DeveloperService = _DeveloperService;
         this.pageTitle = 'Developers';
         this.listFilter = '';
-        this.developers = DeveloperService.getDevelopers();
+        //this.developers = DeveloperService.getanyDevelopers();//DeveloperService.getDevelopers();
     }
+    DevelopersListComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this._DeveloperService.getanyDevelopers()
+            .subscribe(function (products) { return _this.developers = products; }, function (error) { return _this.errorMessage = error; });
+    };
     return DevelopersListComponent;
 }());
 DevelopersListComponent = __decorate([
