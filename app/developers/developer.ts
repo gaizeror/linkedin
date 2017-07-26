@@ -1,3 +1,4 @@
+import { IDSkills } from './skills/developerskills'
 export interface IDeveloper {
         "Id": number;
         "FirstName": string;
@@ -5,6 +6,6 @@ export interface IDeveloper {
         "Phone": string;
         "Mail": string;
         "Systems": any[];
-        //"Skills": any[];
+        "Skills": IDSkills[];
         "Description": string;
 }
