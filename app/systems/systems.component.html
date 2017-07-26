@@ -9,7 +9,7 @@
             <button (click) = 'addNewSysToggle()' *ngIf = '!newSysFlag' type="button" class="btn btn-default navbar-btn">Add new system</button>
             <button (click) = 'addNewSysToggle()' *ngIf = 'newSysFlag' type="button" class="btn btn-default navbar-btn">search in systems</button>
             
-            <div *ngIf = '!newSysFlag' class="row">
+            <div *ngIf = '!newSysFlag' >
                 <input  [(ngModel)] = 'listFilter' type="text" class="form-controll" placeholder="Search Systems.. "/>
             </div>
         
@@ -32,63 +32,9 @@
                 </div>
             </div>
             
+            
             <div  *ngIf = 'newSysFlag' >
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="well-block">
-                                <div class="well-title">
-                                    <h2>Add new system</h2>
-                                </div>
-                                <form method="POST" action="addMySystem()">
-                                <!-- Form start -->
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="control-label" for="name">Name</label>
-                                            <input id="name" name="name" type="text" placeholder="Name" class="form-control input-md">
-                                        </div>
-                                    </div>
-                                    <!-- Text input-->
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="control-label" for="Developed">Developed by</label>
-                                            <input id="Developed" name="Developed" type="text" placeholder="Developed by" class="form-control input-md">
-                                        </div>
-                                    </div>
-                                    <!-- Text input-->
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="control-label" for="Teches">Teches</label>
-                                            <input id="Teches" name="Teches" type="text" placeholder="Teches" class="form-control input-md">
-                                        </div>
-                                    </div>
-                                    <!-- Select Basic -->
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="control-label" for="Plan">Plan</label>
-                                            <input id="Plan" name="Plan" type="text" placeholder="Plan" class="form-control input-md">
-                                        </div>
-                                    </div>
-                                    <!-- Select Basic -->
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label class="control-label" for="Description">Description</label>
-                                            <input id="Description" name="Description" type="text" placeholder="Description" class="form-control input-md">
-                                        </div>
-                                    </div>
-                                    <!-- Button -->
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <button type="submit" id="singlebutton" name="singlebutton" class="btn btn-default">Add my system</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                            <!-- form end -->
-                        </div>
-                    </div>
-                </div>
+                <li-form></li-form>
             </div>
         </div>
     </div>

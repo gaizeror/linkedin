@@ -17,6 +17,7 @@ var app_component_1 = require("./app.component");
 var welcome_component_1 = require("./home/welcome.component");
 var developers_list_component_1 = require("./developers/developers-list.component");
 var systems_component_1 = require("./systems/systems.component");
+var form_component_1 = require("./systems/form.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -36,7 +37,7 @@ AppModule = __decorate([
             ]),
             forms_1.FormsModule,
         ],
-        declarations: [app_component_1.AppComponent, developers_list_component_1.DevelopersListComponent, systems_component_1.SystemsComponent, welcome_component_1.WelcomeComponent, systemfilter_pipe_1.SystemFilter, developersfilter_pipe_1.DeveloperFilter],
+        declarations: [app_component_1.AppComponent, developers_list_component_1.DevelopersListComponent, systems_component_1.SystemsComponent, form_component_1.formComponent, welcome_component_1.WelcomeComponent, systemfilter_pipe_1.SystemFilter, developersfilter_pipe_1.DeveloperFilter],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);

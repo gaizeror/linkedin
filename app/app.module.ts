@@ -11,6 +11,7 @@ import { AppComponent }  from './app.component';
 import { WelcomeComponent } from './home/welcome.component';
 import {DevelopersListComponent} from './developers/developers-list.component';
 import {SystemsComponent} from './systems/systems.component';
+import {formComponent} from './systems/form.component';
 
 @NgModule({
   imports: [ 
@@ -26,7 +27,7 @@ import {SystemsComponent} from './systems/systems.component';
     FormsModule,
 
   ],
-  declarations: [ AppComponent, DevelopersListComponent, SystemsComponent, WelcomeComponent,SystemFilter, DeveloperFilter ],
+  declarations: [ AppComponent, DevelopersListComponent, SystemsComponent,formComponent, WelcomeComponent,SystemFilter, DeveloperFilter ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ISystem } from "./System";
 import { SystemService } from "./systems.service";
 
+
 @Component({
     templateUrl: 'app/systems/systems.component.html',
     providers: [SystemService]
