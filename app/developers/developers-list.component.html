@@ -19,14 +19,16 @@
                 </thead>
                 <tbody>
                     <tr *ngFor='let developer of developers | mydfilter:listFilter'>
-                        <td>{{developer.personalnumber}}</td>
-                        <td>{{developer.firstname}} {{developer.lastname}}</td>
+                        <td>{{developer.Id}}</td>
+                        <td>{{developer.FirstName}} {{developer.LastName}}</td>
                         <td>{{developer.Phone}}</td>
                         <td><a href='mailto:{{developer.Mail}}' >{{developer.Mail}}</a></td>
                         <td>{{developer.Systems}}</td>
                         <!-- <td>{{developer.Skills}}</td> -->
+                        <!-- <td><ul class="list-inline"><li class="list-inline-item" ></li></ul></td> -->
+                        <td><span (click) = "tabClick(skill['Skill'])" class="btn-info" *ngFor="let skill of developer['Skills']">{{skill.Skill}}</span></td>    
                     </tr>
+                </tbody>
             </table>
-        </div>
     </div>
 </div>

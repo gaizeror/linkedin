@@ -5,7 +5,7 @@ export interface IDeveloper {
         "LastName": string;
         "Phone": string;
         "Mail": string;
-        "Systems": any[];
+        "Systems": string[];
         "Skills": IDSkills[];
         "Description": string;
 }

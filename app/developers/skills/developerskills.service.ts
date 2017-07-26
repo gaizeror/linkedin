@@ -1,5 +1,7 @@
-import { IDSkills } from './developerskills'
+import {Injectable} from "@angular/core";
+import { IDSkills } from './developerskills';
 
+@Injectable()
 export class DeveloperSkillsService {
     private skills: IDSkills[]=
         [
@@ -76,5 +78,26 @@ export class DeveloperSkillsService {
                 skill.Endorse++;
             }
         });
+    }
+
+    tmpTest(): IDSkills[]{
+        return [
+            {
+                "Id": 308576388,
+                "Skill": "Angular",
+                "Endorse": 4
+            },
+            {
+                "Id": 308576388,
+                "Skill": "MongoDB",
+                "Endorse": 2
+            },
+            {
+                "Id": 205680614,
+                "Skill": "Angular",
+                "Endorse": 4
+            }
+        ]
+        ;
     }
 }

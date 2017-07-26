@@ -16,9 +16,11 @@ require("rxjs/add/operator/do");
 require("rxjs/add/operator/catch");
 require("rxjs/add/operator/map");
 require("rxjs/add/observable/throw");
+var developerskills_service_1 = require("./skills/developerskills.service");
 var DeveloperService = (function () {
-    function DeveloperService(_http) {
+    function DeveloperService(_http, _DeveloperSkillsService) {
         this._http = _http;
+        this._DeveloperSkillsService = _DeveloperSkillsService;
     }
     DeveloperService.prototype.getFakeDevelopers = function () {
         return [
@@ -29,39 +31,39 @@ var DeveloperService = (function () {
                 "Phone": "050-3991-998",
                 "Mail": "doralteres@gmail.com",
                 "Systems": ["icytower", "fifa 2017"],
-                //"Skills": ["Jenkins", "Angular"],
+                "Skills": this._DeveloperSkillsService.tmpTest(),
                 "Description": "bla bla"
-            },
-            {
-                "Id": 305462343,
-                "FirstName": "Moshe",
-                "LastName": "Gilboa",
-                "Phone": "054-2370-144",
-                "Mail": "mgilboa@outlook.com",
-                "Systems": ["SanAndress", "pes 2017"],
-                //"Skills": ["NodeJS", "Angular"],
-                "Description": "bla"
-            },
-            {
-                "Id": 205680614,
-                "FirstName": "Or",
-                "LastName": "Gaizer",
-                "Phone": "050-3991-998",
-                "Mail": "gaizeror@gmail.com",
-                "Systems": ["Beta", "fifa 2017"],
-                //"Skills": ["SaltStack", "MongoDB"],
-                "Description": ""
-            },
-            {
-                "Id": 308576388,
-                "FirstName": "Tomer",
-                "LastName": "Salton",
-                "Phone": "054-2370-144",
-                "Mail": "saltontomer@outlook.com",
-                "Systems": ["SanAndress", "pes 2017"],
-                //"Skills": ["EXchange", "MongoDB"],
-                "Description": "bla"
             }
+            // {
+            //     "Id": 305462343,
+            //     "FirstName": "Moshe",
+            //     "LastName": "Gilboa",
+            //     "Phone": "054-2370-144",
+            //     "Mail": "mgilboa@outlook.com",
+            //     "Systems": ["SanAndress", "pes 2017"],
+            //     //"Skills": ["NodeJS", "Angular"],
+            //     "Description": "bla"
+            // },
+            // {
+            //     "Id": 205680614,
+            //     "FirstName": "Or",
+            //     "LastName": "Gaizer",
+            //     "Phone": "050-3991-998",
+            //     "Mail": "gaizeror@gmail.com",
+            //     "Systems": ["Beta", "fifa 2017"],
+            //     //"Skills": ["SaltStack", "MongoDB"],
+            //     "Description": ""
+            // },
+            // {
+            //     "Id": 308576388,
+            //     "FirstName": "Tomer",
+            //     "LastName": "Salton",
+            //     "Phone": "054-2370-144",
+            //     "Mail": "saltontomer@outlook.com",
+            //     "Systems": ["SanAndress", "pes 2017"],
+            //     //"Skills": ["EXchange", "MongoDB"],
+            //     "Description": "bla"
+            // }
         ];
     };
     DeveloperService.prototype.getDevelopers = function () {
@@ -86,11 +88,14 @@ var DeveloperService = (function () {
         console.error(error);
         return Observable_1.Observable.throw(error.json().error || 'Server error');
     };
+    DeveloperService.prototype.jsontest = function (url, data) {
+        this._http.post(url, JSON.stringify(data), { headers: { 'Content-Type': 'application/json' } });
+    };
     return DeveloperService;
 }());
 DeveloperService = __decorate([
     core_1.Injectable(),
-    __metadata("design:paramtypes", [http_1.Http])
+    __metadata("design:paramtypes", [http_1.Http, developerskills_service_1.DeveloperSkillsService])
 ], DeveloperService);
 exports.DeveloperService = DeveloperService;
 //# sourceMappingURL=developer.service.js.map

@@ -11,24 +11,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var developer_service_1 = require("./developer.service");
+var developerskills_service_1 = require("./skills/developerskills.service");
 var DevelopersListComponent = (function () {
     function DevelopersListComponent(_DeveloperService) {
         this._DeveloperService = _DeveloperService;
         this.pageTitle = 'Developers';
         this.listFilter = '';
-        //this.developers = DeveloperService.getanyDevelopers();//DeveloperService.getDevelopers();
+        this.developers = this._DeveloperService.getFakeDevelopers(); //DeveloperService.getDevelopers();
     }
-    DevelopersListComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this._DeveloperService.getGitHub()
-            .subscribe(function (products) { return _this.developers = products; }, function (error) { return _this.errorMessage = error; });
+    // ngOnInit(): void {
+    //     this._DeveloperService.getGitHub()
+    //             .subscribe(products => this.developers = products,
+    //                        error => this.errorMessage = <any>error);
+    // }
+    DevelopersListComponent.prototype.tabClick = function (str) {
+        this.listFilter = "#" + str;
     };
     return DevelopersListComponent;
 }());
 DevelopersListComponent = __decorate([
     core_1.Component({
         templateUrl: 'app/developers/developers-list.component.html',
-        providers: [developer_service_1.DeveloperService]
+        styleUrls: ['app/developers/developers-list.css'],
+        providers: [developer_service_1.DeveloperService, developerskills_service_1.DeveloperSkillsService]
     }),
     __metadata("design:paramtypes", [developer_service_1.DeveloperService])
 ], DevelopersListComponent);
